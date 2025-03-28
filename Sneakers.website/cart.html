@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Shoes Bazar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">SHOES<span>BAZAR.</span></a>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+    
+            <ul class="navlist">
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="aboutus.html" class="link">About Us</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+    
+            <div class="nav-icons">
+                <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="icon cart"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+    
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="blog.html" class="link">Blog</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Your Cart</h2>
+                <div class="line"></div>
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                <div id="cart-total" class="cart-total">
+                    <!-- Total price will be displayed here -->
+                </div>
+                <div class="cart-actions">
+                    <a href="shop.html" class="btn">Continue Shopping</a>
+                    <button id="proceed-to-checkout" class="btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Shoes Bazar is your premier destination for the latest footwear trends and styles. We offer quality products with exceptional customer service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="faqs.html">Shipping Policy</a></li>
+                    <li><a href="faqs.html">Return Policy</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="faqs.html">Size Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Street, New York, USA</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@shoesbazar.com</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Shoes Bazar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Cart Functionality
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartTotalContainer.innerHTML = '';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img src="img/${item.id}.jpeg" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price.toFixed(2)}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <button class="remove-from-cart" data-id="${item.id}">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+
+            total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            cartTotalContainer.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+        }
+
+        // Function to remove items from the cart
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart(); // Refresh the cart display
+        }
+
+        // Event listener for removing items
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('remove-from-cart')) {
+                const productId = event.target.getAttribute('data-id');
+                removeFromCart(productId);
+            }
+        });
+
+        // Proceed to Checkout Button
+        document.getElementById('proceed-to-checkout').addEventListener('click', function () {
+            window.location.href = 'checkout.html';
+        });
+
+        // Display cart items when the page loads
+        document.addEventListener('DOMContentLoaded', displayCart);
+    </script>
+</body>
+</html>

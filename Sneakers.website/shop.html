@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Shoes Bazar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">SHOES<span>BAZAR.</span></a>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+    
+            <ul class="navlist">
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="aboutus.html" class="link">About Us</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+    
+            <div class="nav-icons">
+                <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="icon cart"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+    
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="aboutus.html" class="link">About Us</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Men's Section -->
+        <section id="mens-section" class="section">
+            <div class="container">
+                <h2>Men's Shoes</h2>
+                <div class="line"></div>
+                <div class="card-container flex">
+                    <!-- Men's Shoes Cards -->
+                    <div class="card">
+                        <img src="img/OIP.jpeg" alt="Men's Shoe 1">
+                        <div class="card-content">
+                            <p class="tittle">Best Sneakers For Men 2024 - Honey Laurena</p>
+                            <div>
+                                <span class="Amount">$100.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/OIP (1).jpeg" alt="Men's Shoe 2">
+                        <div class="card-content">
+                            <p class="tittle">Black & White sneakers</p>
+                            <div>
+                                <span class="Amount">$80.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/8.jpeg" alt="Men's Shoe 3">
+                        <div class="card-content">
+                            <p class="tittle">Black Puma sneakers</p>
+                            <div>
+                                <span class="Amount">$85.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/4.avif" alt="Men's Shoe 4">
+                        <div class="card-content">
+                            <p class="tittle">Puma sneakers</p>
+                            <div>
+                                <span class="Amount">$56.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women's Section -->
+        <section id="womens-section" class="section">
+            <div class="container">
+                <h2>Women's Shoes</h2>
+                <div class="line"></div>
+                <div class="card-container flex">
+                    <!-- Women's Shoes Cards -->
+                    <div class="card">
+                        <img src="img/p1.jpeg" alt="Women's Shoe 1">
+                        <div class="card-content">
+                            <p class="tittle">Corvebse sneakers</p>
+                            <div>
+                                <span class="Amount">$100.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/p2.jpeg" alt="Women's Shoe 2">
+                        <div class="card-content">
+                            <p class="tittle">Black & White puma sneakers</p>
+                            <div>
+                                <span class="Amount">$56.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/p3.jpeg" alt="Women's Shoe 3">
+                        <div class="card-content">
+                            <p class="tittle">White sneakers</p>
+                            <div>
+                                <span class="Amount">$110.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/p5.jpeg" alt="Women's Shoe 4">
+                        <div class="card-content">
+                            <p class="tittle">White sneakers</p>
+                            <div>
+                                <span class="Amount">$110.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids' Section -->
+        <section id="kids-section" class="section">
+            <div class="container">
+                <h2>Kids' Shoes</h2>
+                <div class="line"></div>
+                <div class="card-container flex">
+                    <!-- Kids' Shoes Cards -->
+                    <div class="card">
+                        <img src="img/p8.jpeg" alt="Kid's Shoe 1">
+                        <div class="card-content">
+                            <p class="tittle">Kid's Sneaker 1</p>
+                            <div>
+                                <span class="Amount">$50.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/chc3dit71cu01.jpg" alt="Kid's Shoe 2">
+                        <div class="card-content">
+                            <p class="tittle">Kid's Sneaker 2</p>
+                            <div>
+                                <span class="Amount">$60.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/boys-shoes-Kids-Sneakers-quality-mesh-breathable-children-s-sports-blue-shoes-US-size-4-5_867beb3c-7d4f-4ea6-8c52-02e8c10a8d1c.7a40d97a1c4711ea390ea14740e0ebfa.webp" alt="Kid's Shoe 3">
+                        <div class="card-content">
+                            <p class="tittle">Boys shoes Kids Sneakers quality mesh breathable children's sports blue ...</p>
+                            <div>
+                                <span class="Amount">$60.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/618a647e-36db-47da-85d9-d449f283271b.734ddc164b4b2d29f9eb3d6ba8085450.webp" alt="Kid's Shoe 4">
+                        <div class="card-content">
+                            <p class="tittle">Dream Pairs - Dream Pairs Kids Girls & Boys Fashion Sneakers</p>
+                            <div>
+                                <span class="Amount">$60.00</span>
+                            </div>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Shoes Bazar is your premier destination for the latest footwear trends and styles. We offer quality products with exceptional customer service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="faqs.html">Shipping Policy</a></li>
+                    <li><a href="faqs.html">Return Policy</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="faqs.html">Size Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Street, New York, USA</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@shoesbazar.com</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter --
+        <div class="newsletter">
+            <h3>Get Latest Updates</h3>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </div>
+                <p class="newsletter-message"></p>
+            </form>
+        </div>-->
+
+        <div class="copyright">
+            <p>&copy; 2024 Shoes Bazar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

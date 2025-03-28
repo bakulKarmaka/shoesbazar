@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Shoes Bazar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">SHOES<span>BAZAR.</span></a>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+    
+            <ul class="navlist">
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="aboutus.html" class="link">about Us</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+    
+            <div class="nav-icons">
+                <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="icon cart"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+    
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html" class="link link-active">Home</a></li>
+                <li><a href="shop.html" class="link">Shop</a></li>
+                <li><a href="faqs.html" class="link">FAQs</a></li>
+                <li><a href="blog.html" class="link">Blog</a></li>
+                <li><a href="contact.html" class="link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="checkout-container">
+                <h2>Checkout</h2>
+                <div class="line"></div>
+                <div class="checkout-grid">
+                    <!-- Checkout Form -->
+                    <div class="checkout-form">
+                        <h3>Billing Details</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Shipping Address</label>
+                                <textarea id="address" placeholder="Enter your shipping address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="Enter your city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Zip Code</label>
+                                <input type="text" id="zip" placeholder="Enter your zip code" required>
+                            </div>
+                            <div class="payment-methods">
+                                <h4>Payment Method</h4>
+                                <div class="payment-option">
+                                    <input type="radio" id="credit-card" name="payment" checked>
+                                    <label for="credit-card">Nagad</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="paypal" name="payment">
+                                    <label for="paypal">Bkash</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="cod" name="payment">
+                                    <label for="cod">Cash on Delivery</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="order-summary-items">
+                            <!-- Order items will be dynamically inserted here -->
+                        </div>
+                        <div class="order-summary-total">
+                            <p>Total: $<span id="order-total">0.00</span></p>
+                        </div>
+                        <div class="checkout-actions">
+                            <a href="cart.html" class="btn">Back to Cart</a>
+                            <button id="place-order" class="btn">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- Payment Section -->
+<section class="section payment-section">
+    <div class="container">
+        <h2>Secure Payment</h2>
+        <div class="line"></div>
+        
+        <div class="payment-container">
+            <div class="payment-methods">
+                <h3>Choose Payment Method</h3>
+                
+                <div class="payment-option">
+                    <input type="radio" id="credit-card" name="payment" checked>
+                    <label for="credit-card">
+                        <i class="fas fa-credit-card"></i> Credit/Debit Card
+                    </label>
+                </div>
+                
+                <div class="payment-option">
+                    <input type="radio" id="paypal" name="payment">
+                    <label for="paypal">
+                        <i class="fab fa-paypal"></i> PayPal
+                    </label>
+                </div>
+                
+                <div class="payment-option">
+                    <input type="radio" id="bank-transfer" name="payment">
+                    <label for="bank-transfer">
+                        <i class="fas fa-university"></i> Bank Transfer
+                    </label>
+                </div>
+                
+                <div class="payment-option">
+                    <input type="radio" id="cash-on-delivery" name="payment">
+                    <label for="cash-on-delivery">
+                        <i class="fas fa-money-bill-wave"></i> Cash on Delivery
+                    </label>
+                </div>
+            </div>
+            
+            <div class="payment-form">
+                <!-- Credit Card Form (shown by default) -->
+                <div class="card-form active" id="credit-card-form">
+                    <h3>Card Details</h3>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" placeholder="John Doe">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-expiry">Expiry Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                            <i class="fas fa-question-circle" title="3-digit code on back of card"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="save-card">
+                        <label for="save-card">Save card for future payments</label>
+                    </div>
+                </div>
+                
+                <!-- PayPal Form (hidden by default) -->
+                <div class="paypal-form" id="paypal-form">
+                    <h3>Pay with PayPal</h3>
+                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                    <button class="btn paypal-btn">
+                        <i class="fab fa-paypal"></i> Continue with PayPal
+                    </button>
+                </div>
+                
+                <!-- Bank Transfer Form (hidden by default) -->
+                <div class="bank-transfer-form" id="bank-transfer-form">
+                    <h3>Bank Transfer Details</h3>
+                    <div class="bank-details">
+                        <p><strong>Account Name:</strong> Shoes Bazar Inc.</p>
+                        <p><strong>Bank Name:</strong> International Commerce Bank</p>
+                        <p><strong>Account Number:</strong> 1234567890</p>
+                        <p><strong>IBAN:</strong> US33 ICBK 1234 5678 9012 3456</p>
+                        <p><strong>SWIFT/BIC:</strong> ICBKUS33</p>
+                    </div>
+                    <p class="note">Please include your order number as the payment reference.</p>
+                </div>
+                
+                <!-- Cash on Delivery Form (hidden by default) -->
+                <div class="cod-form" id="cash-on-delivery-form">
+                    <h3>Cash on Delivery</h3>
+                    <p>Pay with cash when your order is delivered.</p>
+                    <p class="note">An additional $5.00 service charge applies to COD orders.</p>
+                </div>
+                
+                <div class="payment-security">
+                    <p><i class="fas fa-lock"></i> Your payment information is processed securely. We do not store your credit card details.</p>
+                    <div class="security-badges">
+                        <img src="https://www.ssltrust.com.au/assets/images/seal/rapid-ssl-secure.png" alt="SSL Secure">
+                        <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal Verified">
+                        <img src="https://cdn.worldvectorlogo.com/logos/pci-dss.svg" alt="PCI Compliant">
+                    </div>
+                </div>
+                
+                <button class="btn payment-btn">Complete Payment</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Shoes Bazar is your premier destination for the latest footwear trends and styles. We offer quality products with exceptional customer service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="faqs.html">Shipping Policy</a></li>
+                    <li><a href="faqs.html">Return Policy</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="faqs.html">Size Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Street, New York, USA</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@shoesbazar.com</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Shoes Bazar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to dynamically populate order summary and calculate total
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const orderSummaryItems = document.querySelector('.order-summary-items');
+        const orderTotal = document.getElementById('order-total');
+
+        if (cart.length === 0) {
+            orderSummaryItems.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            orderSummaryItems.innerHTML = cart.map(item => `
+                <div class="order-summary-item">
+                    <img src="img/${item.id}.jpeg" alt="${item.name}">
+                    <div class="order-summary-item-details">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            orderTotal.textContent = total.toFixed(2);
+        }
+
+        // Place Order Button
+        document.getElementById('place-order').addEventListener('click', function () {
+            alert('Order placed successfully!');
+            localStorage.removeItem('cart');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
